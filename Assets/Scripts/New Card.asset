@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7349928aad07a0c4eb81edb7f14154ff, type: 3}
+  m_Name: New Card
+  m_EditorClassIdentifier: 
+  cardName: Test
+  description: eeeee
+  backgroundArt: {fileID: 21300000, guid: 31cfa22e5c85acb4e8126309fa5cd7f0, type: 3}
+  characterArt: {fileID: 21300000, guid: e3caa55815fd3e149895913198e54163, type: 3}
+  costSprite: {fileID: 21300000, guid: b57f07a69496b3f41ac3137117cacf7a, type: 3}
+  attackSprite: {fileID: 21300000, guid: fbaa1b1db3286a24a9e039ba111ab793, type: 3}
+  healthSprite: {fileID: 21300000, guid: e28727bfa174a884f8ebfa5735c00787, type: 3}
+  cost: 1
+  attack: 2
+  health: 3
