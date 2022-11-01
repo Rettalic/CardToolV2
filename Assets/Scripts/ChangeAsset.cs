@@ -8,14 +8,12 @@ public class ChangeAsset : MonoBehaviour
     public GameObject[] indexButtons;
     public GameObject[] pickButtons;
 
-    public RawImage[] changeImg;
-
     public void EnableIndexButtons()
     {
         for (int i = 0; i < pickButtons.Length; i++)
         {
-            pickButtons[i].SetActive(false);
-            indexButtons[i].SetActive(true);
+            pickButtons[i].SetActive(true);
+            indexButtons[i].SetActive(false);
         }
     }
 
@@ -23,8 +21,8 @@ public class ChangeAsset : MonoBehaviour
     {
         for (int i = 0; i < pickButtons.Length; i++)
         {
-            pickButtons[i].SetActive(true);
-            indexButtons[i].SetActive(false);
+            pickButtons[i].SetActive(false);
+            indexButtons[i].SetActive(true);
         }
     }
 }
