@@ -59,7 +59,7 @@ public class ChangePos : MonoBehaviour
 
         //asset.transform.localScale.x = sliderS.value;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && Input.GetKeyDown(KeyCode.LeftShift)) 
         {
             Debug.Log('1');
             

@@ -17,9 +17,9 @@ public class ToolManager : MonoBehaviour
     public FileManager fMan;
     public ChangeAsset cAsset;
 
+    public MoveObject mObject;
     public ChangePos cPos;
     
-
     public TransparencyCaptureToFile capToFile;
     public zzTransparencyCapture capture;
 

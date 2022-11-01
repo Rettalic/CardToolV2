@@ -8,20 +8,20 @@ public class MoveObject : MonoBehaviour
 
     public GameObject obj;
     public Collider collider;
-    public int backgroundInt = 690; //Odly specific number needed to keep the size.
+    public int backgroundInt = 690; //Odly specific number needed to keep the size of the object.
     
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.LeftShift))
         {
-            transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, backgroundInt));
+            obj.transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, backgroundInt));
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit)){
-                if(hit.collider == collider) transform.position = Vector3.MoveTowards(transform.position, hit.point, Time.deltaTime);
+                if(hit.collider == collider) obj.transform.position = Vector3.MoveTowards(transform.position, hit.point, Time.deltaTime);
             }
         }
     }
