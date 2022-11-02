@@ -56,20 +56,6 @@ public class ChangePos : MonoBehaviour
         currentPos.x = sliderX.value;
         currentPos.y = sliderY.value;
         asset.transform.position = currentPos;
-
-        //asset.transform.localScale.x = sliderS.value;
-
-        if (Input.GetMouseButton(0) && Input.GetKeyDown(KeyCode.LeftShift)) 
-        {
-            Debug.Log('1');
-            
-            RaycastHit2D hit = Physics2D.Raycast(cam.transform.position, transform.TransformDirection(Vector2.up), 1f);
-            if (hit)
-            {
-                Debug.Log(hit);
-                asset = hit.transform.gameObject;
-            }
-        }
     }
 
     public void StoreField()
