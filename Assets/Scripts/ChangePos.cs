@@ -25,8 +25,8 @@ public class ChangePos : MonoBehaviour
     public int maxValR;
     public int minValR;
 
-    public int maxValS;
-    public int minValS;
+    public float maxValS;
+    public float minValS;
 
 
     private void Start()
@@ -48,6 +48,7 @@ public class ChangePos : MonoBehaviour
         sliderS.onValueChanged.AddListener((v) => field.text = v.ToString("0.0"));
         sliderS.maxValue = maxValS;
         sliderS.minValue = minValS;
+        sliderS.value = 1;
     }
 
     private void Update()
@@ -55,6 +56,8 @@ public class ChangePos : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return)) StoreField();
         currentPos.x = sliderX.value;
         currentPos.y = sliderY.value;
+        asset.transform.rotation = Quaternion.Euler(0, 0, sliderR.value);
+        asset.transform.localScale = new Vector3(sliderS.value, sliderS.value, 1);
         asset.transform.position = currentPos;
     }
 

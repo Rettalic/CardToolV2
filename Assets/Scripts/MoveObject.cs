@@ -16,7 +16,6 @@ public class MoveObject : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.LeftShift))
         {
             obj.transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, backgroundInt));

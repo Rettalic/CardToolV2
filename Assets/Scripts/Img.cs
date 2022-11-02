@@ -9,11 +9,12 @@ public class Img : MonoBehaviour
     public RawImage image;
     public RawImage connectImage;
     public MoveObject moveObject;
+    public ChangePos changePos;
+    public GameObject old;
 
     private void Start()
     {
-        image = GetComponentInParent<RawImage>();
-
+        image = GetComponent<RawImage>();
     }
     public void SetScript()
     {
@@ -27,6 +28,12 @@ public class Img : MonoBehaviour
 
     public void SetMoveObject()
     {
+        old = moveObject.obj;
         moveObject.obj = connectImage.gameObject;
+        changePos.asset = connectImage.gameObject;
+
+        moveObject.obj.transform.localScale    = old.transform.localScale;
+        moveObject.obj.transform.localPosition = old.transform.localPosition;
+        moveObject.obj.transform.localRotation = old.transform.localRotation;
     }
 }
