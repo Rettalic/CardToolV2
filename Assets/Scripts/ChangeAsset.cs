@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class ChangeAsset : MonoBehaviour
 {
-    public GameObject[] indexButtons;
-    public GameObject[] pickButtons;
+    public List<GameObject> indexButtons;
+    public List<GameObject> pickButtons;
 
     public void EnableIndexButtons()
     {
-        for (int i = 0; i < pickButtons.Length; i++)
+        for (int i = 0; i < pickButtons.Count; i++)
         {
             pickButtons[i].SetActive(false);
             indexButtons[i].SetActive(true);
@@ -19,7 +19,7 @@ public class ChangeAsset : MonoBehaviour
 
     public void EnablePickButtons()
     {
-        for (int i = 0; i < pickButtons.Length; i++)
+        for (int i = 0; i < pickButtons.Count; i++)
         {
             pickButtons[i].SetActive(true);
             indexButtons[i].SetActive(false);
