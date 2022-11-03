@@ -28,12 +28,15 @@ public class Img : MonoBehaviour
 
     public void SetMoveObject()
     {
-        old = moveObject.obj;
+        changePos.sliderR.value = connectImage.gameObject.transform.localRotation.z;
+        changePos.sliderS.value = connectImage.gameObject.transform.localScale.z;
+        changePos.sliderX.value = connectImage.gameObject.transform.position.x;
+        changePos.sliderY.value = connectImage.gameObject.transform.position.y;
+
         moveObject.obj = connectImage.gameObject;
         changePos.asset = connectImage.gameObject;
 
-        moveObject.obj.transform.localScale    = old.transform.localScale;
-        moveObject.obj.transform.localPosition = old.transform.localPosition;
-        moveObject.obj.transform.localRotation = old.transform.localRotation;
+       
+
     }
 }
