@@ -10,7 +10,6 @@ public class Img : MonoBehaviour
     public RawImage connectImage;
     public MoveObject moveObject;
     public ChangePos changePos;
-    public GameObject old;
 
     private void Start()
     {
@@ -35,8 +34,5 @@ public class Img : MonoBehaviour
 
         moveObject.obj = connectImage.gameObject;
         changePos.asset = connectImage.gameObject;
-
-       
-
     }
 }
