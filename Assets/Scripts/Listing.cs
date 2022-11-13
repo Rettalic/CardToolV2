@@ -17,6 +17,17 @@ public class Listing : MonoBehaviour
     public ChangeAsset button;
     public int index = 0;
 
+    public int startAmount;
+
+
+    public void Start()
+    {
+        for (int i = 0; i < startAmount; i++)
+        {
+            CreateImgInst();
+        }
+    }
+
     public void CreateImgInst()
     {
         //PLAATJE
@@ -29,7 +40,6 @@ public class Listing : MonoBehaviour
         GameObject indexObj = newObj.transform.GetChild(0).gameObject;
         button.pickButtons.Add(pickObj);
         button.indexButtons.Add(indexObj);
-
         newObj.transform.SetParent(parent2.transform, false);
 
         imgList.Add(newObj);
@@ -37,10 +47,9 @@ public class Listing : MonoBehaviour
 
         //CONNECT
         imgList[index].GetComponent<Img>().connectImage = imgList2[index].GetComponent<RawImage>();
-        //RawImage thing = imgList[index].GetComponent<Img>().connectImage;
-        //RawImage thee  = imgList2[index].GetComponent<RawImage>();
-        //thing = thee;
 
         index = index + 1;
     }
+
+
 }
