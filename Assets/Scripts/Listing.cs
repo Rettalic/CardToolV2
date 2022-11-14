@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class Listing : MonoBehaviour
 {
-    public List<GameObject> imgList;
-    public List<GameObject> imgList2;
+    public int startAmount;
+    private int index = 0;
+    public List<GameObject> buttonList;
+    public List<GameObject> cardList;
 
-    public GameObject parent1;
-    public GameObject parent2;
+    public GameObject cardParent;
+    public GameObject buttonParent;
 
     public GameObject baseObj;
 
     public GameObject imageInst;
     public ChangeAsset button;
-    public int index = 0;
 
-    public int startAmount;
 
 
     public void Start()
@@ -30,23 +30,25 @@ public class Listing : MonoBehaviour
 
     public void CreateImgInst()
     {
-        //PLAATJE
-        var obj = Instantiate(baseObj, transform);
-        obj.transform.SetParent(parent1.transform, false);
+        //Image Setup
+        GameObject obj = Instantiate(baseObj, transform);
+        obj.transform.SetParent(cardParent.transform, false);
 
         //BUTTON
-        GameObject newObj = Instantiate(imageInst, transform);
-        GameObject pickObj = newObj.transform.GetChild(1).gameObject;
-        GameObject indexObj = newObj.transform.GetChild(0).gameObject;
+        GameObject buttonObj = Instantiate(imageInst, transform);
+        GameObject pickObj = buttonObj.transform.GetChild(1).gameObject;
+        GameObject indexObj = buttonObj.transform.GetChild(0).gameObject;
+
+        //Add to button list to turn on and off
         button.pickButtons.Add(pickObj);
         button.indexButtons.Add(indexObj);
-        newObj.transform.SetParent(parent2.transform, false);
+        buttonObj.transform.SetParent(buttonParent.transform, false);
 
-        imgList.Add(newObj);
-        imgList2.Add(obj);
+        buttonList.Add(buttonObj);
+        cardList.Add(obj);
 
         //CONNECT
-        imgList[index].GetComponent<Img>().connectImage = imgList2[index].GetComponent<RawImage>();
+        buttonList[index].GetComponent<Img>().connectImage = cardList[index].GetComponent<RawImage>();
 
         index = index + 1;
     }

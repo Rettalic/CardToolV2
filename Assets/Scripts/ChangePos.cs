@@ -42,19 +42,19 @@ public class ChangePos : MonoBehaviour
     {
         currentPos = new Vector2();
         
-        sliderX.onValueChanged.AddListener((v) => fieldX.text = v.ToString("0"));
+        sliderX.onValueChanged.AddListener((v) => fieldX.text = v.ToString("0.0"));
         sliderX.maxValue = maxValX;
         sliderX.minValue = minValX;
 
-        sliderY.onValueChanged.AddListener((v) => fieldY.text = v.ToString("0"));
+        sliderY.onValueChanged.AddListener((v) => fieldY.text = v.ToString("0.0"));
         sliderY.maxValue = maxValY;
         sliderY.minValue = minValY;
 
-        sliderR.onValueChanged.AddListener((v) => fieldR.text = v.ToString("0"));
+        sliderR.onValueChanged.AddListener((v) => fieldR.text = v.ToString("0.0"));
         sliderR.maxValue = maxValR;
         sliderR.minValue = minValR;
 
-        sliderS.onValueChanged.AddListener((v) => fieldS.text = v.ToString("0"));
+        sliderS.onValueChanged.AddListener((v) => fieldS.text = v.ToString("0.0"));
         sliderS.maxValue = maxValS;
         sliderS.minValue = minValS;
         sliderS.value = 1;
@@ -73,8 +73,6 @@ public class ChangePos : MonoBehaviour
         Y.text = "Pos Y: " + asset.transform.position.y.ToString("0.0");
         R.text = "Rotation: " + sliderR.value.ToString("0.0");
         S.text = "Scale: " + asset.transform.localScale.x.ToString("0.0");
-        
-
     }
 
     public void StoreField()
@@ -83,10 +81,5 @@ public class ChangePos : MonoBehaviour
         sliderY.value = float.Parse(fieldY.text);
         sliderR.value = float.Parse(fieldR.text);
         sliderS.value = float.Parse(fieldS.text);
-    }
-
-    public void SetObj()
-    {
-
     }
 }

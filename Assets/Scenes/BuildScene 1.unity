@@ -5364,7 +5364,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845604024}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CreateTextures, Assembly-CSharp
         m_MethodName: CreateImgInst
         m_Mode: 1
@@ -5734,7 +5734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   change: {fileID: 1776730216}
-  img: {fileID: 0}
   image: {fileID: 257748973}
 --- !u!1 &688874971
 GameObject:
@@ -8084,7 +8083,6 @@ GameObject:
   - component: {fileID: 845604021}
   - component: {fileID: 845604023}
   - component: {fileID: 845604022}
-  - component: {fileID: 845604024}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -8155,20 +8153,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &845604024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845604020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16195aff48a992c42bce4f22a597ea57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageInst: {fileID: 684173518}
-  button: {fileID: 911696577}
 --- !u!1 &845942833
 GameObject:
   m_ObjectHideFlags: 0
@@ -9576,15 +9560,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6211ab189ed4a4091a464250d6f730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imgList: []
-  imgList2: []
-  parent1: {fileID: 764171558}
-  parent2: {fileID: 845604020}
+  startAmount: 6
+  buttonList: []
+  cardList: []
+  cardParent: {fileID: 764171558}
+  buttonParent: {fileID: 845604020}
   baseObj: {fileID: 353253519}
   imageInst: {fileID: 684173518}
   button: {fileID: 911696577}
-  index: 0
-  startAmount: 6
 --- !u!4 &935036621
 Transform:
   m_ObjectHideFlags: 0
@@ -9775,12 +9758,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolState: 0
-  fMan: {fileID: 1690970091}
-  cAsset: {fileID: 586274575}
+  fMan: {fileID: 0}
+  cAsset: {fileID: 0}
   mObject: {fileID: 0}
-  cPos: {fileID: 1595410569}
-  capToFile: {fileID: 551760052}
-  capture: {fileID: 551760051}
+  cPos: {fileID: 0}
+  capToFile: {fileID: 0}
+  capture: {fileID: 0}
 --- !u!1 &985328965
 GameObject:
   m_ObjectHideFlags: 0

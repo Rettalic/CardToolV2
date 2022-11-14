@@ -5,9 +5,6 @@ using UnityEngine;
 public class MoveCam : MonoBehaviour
 {
     public Transform target;
-
-
-    // Update is called once per frame
     void Update()
     {
         this.transform.position = target.position + new Vector3(0,0,-20);

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ReferenceObject : MonoBehaviour
 {
     public ChangeForBackGround change;
-    public Img img;
+    private Img img;
     public RawImage image;
 
     public void Start()
@@ -18,8 +18,8 @@ public class ReferenceObject : MonoBehaviour
     {
         if(img.connectImage != null)
         {
-        change.obj = img.connectImage.gameObject;
-        image.texture = img.connectImage.texture;
+            change.obj = img.connectImage.gameObject;
+            image.texture = img.connectImage.texture;
         }
     }
 }

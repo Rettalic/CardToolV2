@@ -8,22 +8,22 @@ public class Img : MonoBehaviour
     public FileManager fMan;
     public RawImage image;
     public RawImage connectImage;
-    public MoveObject moveObject;
     public ChangePos changePos;
 
     private void Start()
     {
         image = GetComponent<RawImage>();
     }
+    public void Update()
+    {
+        if(image != null && connectImage != null) connectImage.texture = image.texture;
+    }
+
     public void SetScript()
     {
         fMan.im = this;
     }
 
-    public void Update()
-    {
-        if(image != null && connectImage != null) connectImage.texture = image.texture;
-    }
 
     public void SetMoveObject()
     {
@@ -32,7 +32,6 @@ public class Img : MonoBehaviour
         changePos.sliderX.value = connectImage.gameObject.transform.position.x;
         changePos.sliderY.value = connectImage.gameObject.transform.position.y;
 
-        moveObject.obj = connectImage.gameObject;
         changePos.asset = connectImage.gameObject;
     }
 }
