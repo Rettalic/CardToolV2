@@ -42,15 +42,15 @@ public class ChangePos : MonoBehaviour
     {
         currentPos = new Vector2();
         
-        sliderX.onValueChanged.AddListener((v) => fieldX.text = v.ToString("0.0"));
+        sliderX.onValueChanged.AddListener((v) => fieldX.text = v.ToString("0"));
         sliderX.maxValue = maxValX;
         sliderX.minValue = minValX;
 
-        sliderY.onValueChanged.AddListener((v) => fieldY.text = v.ToString("0.0"));
+        sliderY.onValueChanged.AddListener((v) => fieldY.text = v.ToString("0"));
         sliderY.maxValue = maxValY;
         sliderY.minValue = minValY;
 
-        sliderR.onValueChanged.AddListener((v) => fieldR.text = v.ToString("0.0"));
+        sliderR.onValueChanged.AddListener((v) => fieldR.text = v.ToString("0"));
         sliderR.maxValue = maxValR;
         sliderR.minValue = minValR;
 

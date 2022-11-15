@@ -33,6 +33,7 @@ public class Listing : MonoBehaviour
         //Image Setup
         GameObject obj = Instantiate(baseObj, transform);
         obj.transform.SetParent(cardParent.transform, false);
+        obj.transform.GetComponent<Image>().preserveAspect = true;
 
         //BUTTON
         GameObject buttonObj = Instantiate(imageInst, transform);
