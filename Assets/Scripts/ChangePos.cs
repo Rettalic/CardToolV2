@@ -45,14 +45,17 @@ public class ChangePos : MonoBehaviour
         sliderX.onValueChanged.AddListener((v) => fieldX.text = v.ToString("0"));
         sliderX.maxValue = maxValX;
         sliderX.minValue = minValX;
+        sliderX.value = 0.0f;
 
         sliderY.onValueChanged.AddListener((v) => fieldY.text = v.ToString("0"));
         sliderY.maxValue = maxValY;
         sliderY.minValue = minValY;
+        sliderY.value = 0.0f;
 
         sliderR.onValueChanged.AddListener((v) => fieldR.text = v.ToString("0"));
         sliderR.maxValue = maxValR;
         sliderR.minValue = minValR;
+        sliderR.value = 0.0f;
 
         sliderS.onValueChanged.AddListener((v) => fieldS.text = v.ToString("0.0"));
         sliderS.maxValue = maxValS;
@@ -77,9 +80,9 @@ public class ChangePos : MonoBehaviour
 
     public void StoreField()
     {
-        sliderX.value = float.Parse(fieldX.text);
-        sliderY.value = float.Parse(fieldY.text);
-        sliderR.value = float.Parse(fieldR.text);
-        sliderS.value = float.Parse(fieldS.text);
+        if(fieldX.text != null) sliderX.value = float.Parse(fieldX.text);
+        if(fieldY.text != null) sliderY.value = float.Parse(fieldY.text);
+        if(fieldR.text != null) sliderR.value = float.Parse(fieldR.text);
+        if(fieldS.text != null) sliderS.value = float.Parse(fieldS.text);
     }
 }
