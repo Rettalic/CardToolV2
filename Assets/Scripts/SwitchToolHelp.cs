@@ -8,7 +8,7 @@ public class SwitchToolHelp : MonoBehaviour
 {
     public List<Image> images;
     public Image image;
-    private int index = 0;
+    public int index = 0;
     private bool onOff = false;
 
     private void Start()
@@ -31,9 +31,9 @@ public class SwitchToolHelp : MonoBehaviour
     public void GoLeft()
     {
         index--;
-        if(index < images.Count)
+        if(index <= 0)
         {
-            index = images.Count;
+            index = images.Count -1;
         }
         image.sprite = images[index].sprite;
     }
