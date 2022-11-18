@@ -54,5 +54,15 @@ public class Listing : MonoBehaviour
         index = index + 1;
     }
 
+    public void DeleteObject()
+    {
+        index--;
+        Destroy(buttonList[index].gameObject);
+        Destroy(cardList[index].gameObject);
+        button.indexButtons.RemoveAt(index);
+        button.pickButtons.RemoveAt(index);
+        buttonList.RemoveAt(index);
+        cardList.RemoveAt(index);
+    }
 
 }

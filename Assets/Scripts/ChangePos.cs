@@ -46,36 +46,43 @@ public class ChangePos : MonoBehaviour
         sliderX.maxValue = maxValX;
         sliderX.minValue = minValX;
         sliderX.value = 0.0f;
+        fieldX.text = "1.0"; 
 
         sliderY.onValueChanged.AddListener((v) => fieldY.text = v.ToString("0"));
         sliderY.maxValue = maxValY;
         sliderY.minValue = minValY;
         sliderY.value = 0.0f;
+        fieldX.text = "1.0";
 
         sliderR.onValueChanged.AddListener((v) => fieldR.text = v.ToString("0"));
         sliderR.maxValue = maxValR;
         sliderR.minValue = minValR;
         sliderR.value = 0.0f;
+        fieldX.text = "1.0";
 
         sliderS.onValueChanged.AddListener((v) => fieldS.text = v.ToString("0.0"));
         sliderS.maxValue = maxValS;
         sliderS.minValue = minValS;
         sliderS.value = 1;
+        fieldX.text = "1.0";
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return)) StoreField();
-        currentPos.x = sliderX.value;
-        currentPos.y = sliderY.value;
-        asset.transform.rotation = Quaternion.Euler(0, 0, sliderR.value);
-        asset.transform.localScale = new Vector3(sliderS.value, sliderS.value, 1);
-        asset.transform.position = currentPos;
+        if(asset != null)
+        {
+            currentPos.x = sliderX.value;
+            currentPos.y = sliderY.value;
+            asset.transform.rotation = Quaternion.Euler(0, 0, sliderR.value);
+            asset.transform.localScale = new Vector3(sliderS.value, sliderS.value, 1);
+            asset.transform.position = currentPos;
 
-        X.text = "Pos X: " + asset.transform.position.x.ToString("0.0");
-        Y.text = "Pos Y: " + asset.transform.position.y.ToString("0.0");
-        R.text = "Rotation: " + sliderR.value.ToString("0.0");
-        S.text = "Scale: " + asset.transform.localScale.x.ToString("0.0");
+            X.text = "Pos X: " + asset.transform.position.x.ToString("0.0");
+            Y.text = "Pos Y: " + asset.transform.position.y.ToString("0.0");
+            R.text = "Rotation: " + sliderR.value.ToString("0.0");
+            S.text = "Scale: " + asset.transform.localScale.x.ToString("0.0");
+        }
     }
 
     public void StoreField()
